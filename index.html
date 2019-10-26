@@ -158,58 +158,55 @@ var _result = document.getElementById("result");
 var _input = document.getElementById("inputPP");
 var trynum = 0;
 
-function isHex(str)
-{
- regexp = /^[0-9a-fA-F]+$/;
-  
-        if (regexp.test(str))
-          {
-            return true;
-          }
-        else
-          {
-            return false;
-          }
+function isHex(str){
+	regexp = /^[0-9a-fA-F]+$/;
+	
+        if (regexp.test(str)){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
 
 function setpinpuk(){
-
-realpin = _setpin.value;
-realpuk = _setpuk.value;
-
-_setresult.innerHTML = "PIN & PUK has been set on : <br>" + Date(Date.now()).toString();
+	realpin = _setpin.value;
+	realpuk = _setpuk.value;
+	
+	_setresult.innerHTML = "PIN & PUK has been set on : <br>" + Date(Date.now()).toString();
 }
 
 function trybutton(){
 
-var _print = "-";
+	var _print = "-";
 
-if (isHex(inputPP.value)){
-   if(inputPP.value == realpin && trynum < 3){	   
-      trynum==0;
-      _print = "Pin Correct";
-	break;
-   }
-   else if (inputPP.value != realpin && trynum< 3){
-     trynum+=1;
-      _print = "Wrong Pin ("+trynum+")";
-     if (trynum == 3){_print = "BLOCKED, PLEASE INSERT PUK";trynum+=1;}
-   }
-   else if (inputPP.value != realpin && trynum >3){
-     if (inputPP.value == realpuk){
-        trynum==0;
-        _print = "UNBLOCKED";
-     }
-     else {
-        _print = "BLOCKED";
-	break;
-     }
-   }
+	if (isHex(inputPP.value)){
+		if(inputPP.value == realpin && trynum < 3){
+			trynum==0;
+			_print = "Pin Correct";
+		}
+		else if (inputPP.value != realpin && trynum< 3){
+			trynum+=1;
+			_print = "Wrong Pin ("+trynum+")";
 
+			if (trynum == 3){
+				_print = "BLOCKED, PLEASE INSERT PUK";
+				trynum+=1;
+			}
+		}
+		else if (inputPP.value != realpin && trynum >3){
+			if (inputPP.value == realpuk){
+				trynum==0;
+				_print = "UNBLOCKED";
+			}
+			else {
+				_print = "BLOCKED";
+			}
+		}
+	}
+		else _print = "NOT HEX";
 
-} else _print = "NOT HEX";
-
-_result.innerHTML = "Result : " + _print;
+	_result.innerHTML = "Result : " + _print;
 }
 
 </script>
