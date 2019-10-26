@@ -210,7 +210,7 @@ function trybutton(){
 				_print = "BLOCKED, PLEASE INSERT PUK";
 				trynum+=1;
 			}
-		if (inputPP.value != realpin && trynum >3){
+		else if (inputPP.value != realpin && trynum >3){
 			if (inputPP.value == realpuk){
 				trynum=0;
 				_print = "UNBLOCKED";
