@@ -182,7 +182,7 @@ function trybutton(){
 
 	if (isHex(inputPP.value)){
 		if(inputPP.value == realpin && trynum < 3){
-			trynum==0;
+			trynum=0;
 			_print = "Pin Correct";
 		}
 		else if (inputPP.value != realpin && trynum< 3){
@@ -196,7 +196,7 @@ function trybutton(){
 		}
 		else if (inputPP.value != realpin && trynum >3){
 			if (inputPP.value == realpuk){
-				trynum==0;
+				trynum=0;
 				_print = "UNBLOCKED";
 			}
 			else {
