@@ -1,4 +1,4 @@
-﻿<HTML>
+<HTML>
 <HEAD>
 <title>PINPUK Test</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -145,13 +145,7 @@ background-color:#b15ba0d6
 </HEAD>
 <BODY>
 <H1>Hello, V</H1>
-<div class='box'><h2>Correct Value</h2><input type='text' id='setpin' placeholder='Set PIN' >
-	<br>
-	<input type='text' id='setpuk' placeholder='Set PUK' >
-	<br>
-	<input type='button' onclick='setpinpuk()' value='Set' >
-	<p id="setresult"></p>
-</div>
+
 <div class='box'>
 	<h2>Input Test</h2>
 	<input type='text' id='inputPP' value='' >
@@ -159,6 +153,17 @@ background-color:#b15ba0d6
 	<input type='button' onclick='trybutton()' value='TRY' >
 	<p id="result">Result : -</p>
 </div>
+
+<div class='box'>
+	<h2>Correct Value</h2>
+	<input type='text' id='setpin' placeholder='Set PIN' >
+	<br>
+	<input type='text' id='setpuk' placeholder='Set PUK' >
+	<br>
+	<input type='button' onclick='setpinpuk()' value='Set' >
+	<p id="setresult"></p>
+</div>
+	
 <script>
 
 var realpin = "";
